@@ -1,20 +1,40 @@
-# WiFi Handshake and Deauthentication Automation Tool
+<div align="center">
 
-This project is a **Python-based** cybersecurity tool built on the **Aircrack-ng** toolset that automates the **handshake capture**, **deauthentication**, and **password cracking** processes on Wi-Fi networks in a semi-automated manner.
+# NetSpider
 
-The tool simplifies command chains that would otherwise require manual execution, providing practical utility in **educational environments**, **CTF competitions**, **lab setups**, and **authorized penetration testing** scenarios.
+### Guided Wi-Fi handshake capture and password-cracking workflow for labs and authorized testing.
 
-![image](https://github.com/user-attachments/assets/31f25032-a859-48a0-9ca5-693b2d66c9cf)
+A Python front-end for the Aircrack-ng suite that chains the usual manual steps — scan, capture, deauthenticate, crack — into one step-by-step terminal workflow.
+
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Aircrack-ng](https://img.shields.io/badge/Built%20on-Aircrack--ng-e53935?style=for-the-badge)
+![Purpose](https://img.shields.io/badge/Use-Authorized%20testing%20only-121212?style=for-the-badge)
+
+</div>
+
+<div align="center">
+<img alt="NetSpider interface" src="https://github.com/user-attachments/assets/31f25032-a859-48a0-9ca5-693b2d66c9cf" />
+</div>
 
 ---
 
-## General Purpose
+## Overview
 
-- Scan Wi-Fi networks
-- Capture handshakes from target access points
-- Automate deauthentication attacks
-- Execute handshake validation and password cracking in a single workflow
-- Guide users step-by-step through the terminal interface
+The Aircrack-ng workflow normally means remembering a chain of separate commands in the right order. NetSpider walks you through them from a single menu: it verifies the adapter, manages monitor mode, scans for networks, captures a handshake from a chosen access point, and hands the capture off for cracking. It is meant for **your own lab**, CTF practice, and engagements you are authorized to run.
+
+---
+
+## Workflow
+
+| Step | Action |
+|---|---|
+| 1 | Verify the Wi-Fi adapter (`wlan0`) is present |
+| 2 | Enable monitor mode via `airmon-ng` |
+| 3 | Scan nearby Wi-Fi networks and list access points |
+| 4 | Capture a WPA handshake from the selected target |
+| 5 | Run deauthentication to prompt a client to reconnect |
+| 6 | Validate the handshake and attempt a wordlist-based crack |
 
 ---
 
@@ -22,82 +42,34 @@ The tool simplifies command chains that would otherwise require manual execution
 
 - Startup animation and ASCII banner
 - Automatic Wi-Fi adapter (`wlan0`) verification
-- Monitor mode management (`airmon-ng`)
-- Live Wi-Fi network scanning (`airodump-ng`)
-- Target listening based on BSSID and channel
-- Separate terminal deauthentication management
-- Handshake validation (`aircrack-ng`)
-- Brute-force automation (`crunch + john + aircrack-ng`)
-- Process termination and clean shutdown support
-
----
-
-## Tools Used
-
-- Python 3
-- Bash
-- Aircrack-ng
-  - airmon-ng
-  - airodump-ng
-  - aireplay-ng
-  - aircrack-ng
-- Crunch
-- John the Ripper
-- Linux-based operating system
+- Monitor-mode management (`airmon-ng`)
+- Step-by-step guided terminal interface
+- Single workflow from scan to crack
 
 ---
 
 ## Requirements
 
-The following must be installed on the system for the tool to function:
-
-- Linux (Kali, Parrot, Ubuntu, etc.)
-- Python 3.x
-- Aircrack-ng
-- Crunch
-- John the Ripper
-- Wi-Fi adapter with monitor mode support
-- gnome-terminal
+| Component | Notes |
+|---|---|
+| Python 3.x | Interpreter |
+| Aircrack-ng suite | `airmon-ng`, `airodump-ng`, `aireplay-ng`, `aircrack-ng` |
+| Compatible Wi-Fi adapter | Must support monitor mode and packet injection |
+| Linux + root | Required for monitor mode and injection |
 
 ---
 
 ## Installation
+
 ```bash
-git clone https://github.com/osmnabyram/NetSpider.git
-cd NetSpider
-chmod +x netspider.py
+git clone https://github.com/osmnabyram/Siber-NetSpider.git
+cd Siber-NetSpider
+chmod +x NetSpider.py
+sudo python3 NetSpider.py
 ```
 
-## Usage
+---
 
-The tool requires **root privileges** to execute:
-```bash
-sudo python3 netspider.py
-```
+## Responsible Use
 
-## Workflow
-
-- Wi-Fi adapter is verified
-- Monitor mode is activated
-- Surrounding Wi-Fi networks are listed
-- Target BSSID, channel, and capture file name are entered
-- Target is placed under surveillance
-- Deauthentication is executed in a separate terminal
-- Upon handshake capture, validation and password cracking commence
-- Monitor mode is disabled at process completion
-
-## Example Usage Scenario
-
-- A WPA/WPA2 network is identified in a lab environment
-- Clients are disconnected via deauthentication
-- Handshake is captured
-- Password security is tested
-- Results are analyzed
-
-## Legal Notice
-
-This tool is designed exclusively for **educational purposes**, **CTF competitions**, **lab environments**, and **authorized penetration testing** scenarios.
-
-Use against unauthorized networks or systems is **illegal** and incurs legal liability.
-
-The developer assumes **no responsibility** for any damages resulting from misuse of this tool.
+NetSpider is for **education, CTF competitions, lab setups, and authorized penetration testing only**. Capturing handshakes, deauthenticating clients, or cracking passwords on networks you do not own or are not explicitly authorized to test is illegal and unethical. The author accepts no responsibility for misuse.
