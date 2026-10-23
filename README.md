@@ -19,6 +19,10 @@ A Python front-end for the Aircrack-ng suite that chains the usual manual steps 
 
 ---
 
+<div align="center">
+<img src="assets/how-it-works.svg" alt="How it works: an animated diagram of the tool's core flow." width="820" />
+</div>
+
 ## Overview
 
 The Aircrack-ng workflow normally means remembering a chain of separate commands in the right order. NetSpider walks you through them from a single menu: it verifies the adapter, manages monitor mode, scans for networks, captures a handshake from a chosen access point, and hands the capture off for cracking. It is meant for **your own lab**, CTF practice, and engagements you are authorized to run.
