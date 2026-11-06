@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netspider"
+version = "2.0.0"
+description = "WiFi kesif ve WPA guvenlik testi araci (aircrack-ng workflow sarmalayici)"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []          # yalnizca Python standart kutuphanesi
+license = { text = "MIT" }
+
+[project.scripts]
+netspider = "netspider.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["netspider*"]
+
+[tool.setuptools.package-data]
+netspider = ["data/*.txt"]

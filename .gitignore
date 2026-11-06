@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Sanal ortam
+.venv/
+venv/
+env/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+
+# Calisma ciktilari (yakalama dosyalari vb.)
+*.cap
+*.csv
+*.netxml
+*.kismet.*
+found_key.txt
+custom_pass.txt
+*.rec
+
+# Isletim sistemi
+.DS_Store
+Thumbs.db

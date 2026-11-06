@@ -1,0 +1,12 @@
+# NetSpider yalnizca Python standart kutuphanesini kullanir -> harici pip paketi YOK.
+#
+# Gereken SISTEM araclari (Kali'de cogu hazir gelir):
+#   - aircrack-ng   (airmon-ng, airodump-ng, aireplay-ng, aircrack-ng)
+#   - wireless-tools (iwconfig)
+#   - crunch
+#   - john           (John the Ripper)
+#   - network-manager
+#   - bir terminal emulatoru: gnome-terminal / xterm / konsole / xfce4-terminal
+#
+# Kurulum:
+#   sudo apt-get install -y aircrack-ng wireless-tools crunch john network-manager

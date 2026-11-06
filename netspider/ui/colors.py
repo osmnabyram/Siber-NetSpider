@@ -1,0 +1,10 @@
+"""ANSI renk kodlari. Degerler orijinal NetSpider.py ile BIREBIR aynidir."""
+
+RESET      = "\033[0m"
+RED        = "\033[1;91m"
+GREEN      = "\033[1;32m"
+BOLD       = "\033[1m"
+YELLOW     = "\033[1;33m"
+WHITE_BOLD = "\033[1;37m"
+GREEN_BOLD = "\033[1;32m"
+MENU_WHITE = "\033[1;37m"
